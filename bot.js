@@ -49,7 +49,7 @@ class Bot {
         let fullCommand = receivedMessage.content.substr(1); // Remove the leading exclamation mark
         let splitCommand = fullCommand.split(" "); // Split the message up in to pieces for each space
         let primaryCommand = splitCommand[0]; // The first word directly after the exclamation is the command
-        let arguments = splitCommand.slice(1); // All other words are arguments/parameters/options for the command
+        let args = splitCommand.slice(1); // All other words are args/parameters/options for the command
         let windSpeed;
 
         if (primaryCommand.toLowerCase() ===  'help') {
@@ -57,14 +57,14 @@ class Bot {
               "(Example : !weather Lille)");
         }
         if (primaryCommand.toLowerCase() ===  'weather') {
-            if (!arguments[0]) {
-                receivedMessage.channel.send("Too few arguments.\n\nUsage : !weather [City]\n\n(Example : !weather Lille)");
+            if (!args[0]) {
+                receivedMessage.channel.send("Too few args.\n\nUsage : !weather [City]\n\n(Example : !weather Lille)");
             }
-            else if (arguments[1]) {
-                receivedMessage.channel.send("Too many arguments.\n\nUsage : !weather [City]\n\n(Example : !weather Lille)");
+            else if (args[1]) {
+                receivedMessage.channel.send("Too many args.\n\nUsage : !weather [City]\n\n(Example : !weather Lille)");
             }
             else {
-                this._getWeather(arguments[0])
+                this._getWeather(args[0])
                   .then(data => {
                       windSpeed = data.wind.speed * 3.6;
                       receivedMessage.channel.send(
