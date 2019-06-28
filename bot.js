@@ -6,12 +6,13 @@ class Bot {
 
     constructor() {
         this._client = new Discord.Client();
-        this._user = this._client.user;
-        this._guilds = this._client.guilds;
 
         this._client.login(process.env.SECRET_TOKEN);
         //To check if the bot is connected and, if it is, what server he uses
         this._client.on('ready', () => {
+            this._user = this._client.user;
+            this._guilds = this._client.guilds;
+
             console.log("Connected as " + this._user.tag);
             console.log("Servers:");
             this._guilds.forEach((guild) => {
@@ -34,7 +35,7 @@ class Bot {
     }
 
     stop() {
-        this._client.user.setStatus('idle');
+        this._user.setStatus('idle');
         this._client.destroy();
     }
 
