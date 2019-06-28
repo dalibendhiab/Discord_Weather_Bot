@@ -6,17 +6,17 @@ But, how to use it ?
 
 It's very simple !
 
-If a want the current Weather information in Lille, in France :
+If I want the current Weather information in Lille, in France :
 
 Usage : !weather [City]
 
-So, in the chat Discord, i have to write :
+So, in the chat Discord, I have to write :
 
 ->     !weather Lille
 
 
 
-I you are lost, don't hesite to ask some help to the bot with : !help.
+If you are lost, don't hesite to ask some help to the bot with : !help.
 
 
 This discord bot is only functionnal for french city, for the moment...
