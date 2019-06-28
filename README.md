@@ -1,6 +1,6 @@
 # Discord_Weather_Bot
 
-This Discord Bot display the current weather informations for the city of your choice.
+This Discord Bot displays the current weather informations for the city of your choice.
 
 But, how to use it ?
 
